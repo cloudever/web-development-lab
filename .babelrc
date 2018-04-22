@@ -1,0 +1,61 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "modules": false,
+        "debug": false
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-stage-0"
+  ],
+  "plugins": [
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ],
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": "usage",
+            "modules": false,
+            "debug": true
+          }
+        ]
+      ],
+      "plugins": [
+        "react-hot-loader/babel",
+        "@babel/plugin-transform-react-jsx-self"
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-transform-react-remove-prop-types",
+          {
+            "mode": "wrap",
+            "ignoreFilenames": [
+              "node_modules"
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
