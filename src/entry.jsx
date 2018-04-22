@@ -1,6 +1,6 @@
 import 'core-js/fn/string/starts-with';
 
-import 'assets/styles/app.css';
+import 'assets/styles/app.less';
 
 import React from 'react';
 import { render } from 'react-dom';
