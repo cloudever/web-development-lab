@@ -4,7 +4,7 @@
   "main": "src/entry.js",
   "scripts": {
     "build": "webpack --progress",
-    "build:production": "webpack --progress",
+    "build:production": "cross-env NODE_ENV=production webpack --progress",
     "serve": "webpack-dev-server"
   },
   "author": "dalertino@gmail.com",
@@ -33,6 +33,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "2.7.3",
     "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
@@ -42,6 +43,10 @@
     "@babel/polyfill": "^7.0.0-beta.44",
     "antd": "^3.4.2",
     "core-js": "^2.5.5",
+    "formik": "^0.11.11",
+    "lodash": "^4.17.5",
+    "moment": "^2.22.1",
+    "pouchdb": "^6.4.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-hot-loader": "^4.1.1",

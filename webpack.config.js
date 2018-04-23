@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -39,8 +40,8 @@ const config = {
   module: {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader?cacheDirectory' },
-      { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'] },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
     ],
   },
   devServer: {
@@ -59,6 +60,11 @@ const config = {
       filename: 'index.html',
       showErrors: true,
       hash: false,
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name]-[hash].css',
+      chunkFilename: '[id]-[hash].css',
+      disable: DEV,
     }),
   ],
 };

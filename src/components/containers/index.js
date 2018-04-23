@@ -1,0 +1,2 @@
+export PouchDBProvider from './PouchDBProvider';
+
